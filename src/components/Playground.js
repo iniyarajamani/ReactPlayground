@@ -20,6 +20,7 @@ import FadeText from "./FadeText";
 import NavBar from "./navBar"
 import PopOverTrigger from "./PopOverButton";
 import LanguageList from './LanguageList';
+import DropdownButton from "./Dropdown";
 
 
 /* Models/Services */
@@ -87,6 +88,14 @@ let kyle = new Intern(
   "https://www.psdstack.com/wp-content/uploads/2016/10/featured-copyright-free-mages.jpg",
   new Date("8/20/20")
 );
+
+let iniya = new Intern(
+  "Iniya",
+  "Rishing Freshman at UIUC",
+  "Intern (Front-End Dev)",
+  "https://www.themandagies.com/wp-content/uploads/2018/07/Moraine-Lake-and-Lake-Louise-Sunrise-Banff-Alberta-24-1.jpg",
+  new Date("8/15/20")
+)
 
 const Playground = () => {
   const [show, setShow] = useState(false);
@@ -187,6 +196,19 @@ const Playground = () => {
                   {name: 'Swift', key: '4'},
                   {name: 'C', key: '5'},
                 ]}/>
+              </InternInfoDisplay>
+            </Col>
+            <Col className="my-3">
+              <InternInfoDisplay
+                intern={iniya}
+                onClick={() => {
+                  let content = "You clicked!";
+                  console.log(content);
+                  alert(content);
+                }}
+              >
+                <DropdownButton>Hi</DropdownButton>
+                <div>I'm not superstitious, but I am a little stitious</div>
               </InternInfoDisplay>
             </Col>
             <Col className="my-3">
